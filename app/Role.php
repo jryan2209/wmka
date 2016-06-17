@@ -9,5 +9,8 @@ class Role extends Model {
 	public function siteUser() {
 		return $this->hasMany('App\SiteUser');
 	}
+	public function permissions() {
+        return $this->belongsToMany('App\Permission');
+    }
 
 }

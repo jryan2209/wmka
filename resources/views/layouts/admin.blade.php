@@ -7,7 +7,7 @@
     <title>Where My Kids App</title>
     @include('partial.stylesheets')
 </head>
-<body id="app-layout">
+<body id="admin-layout">
   @include('partial.headernav')
 <main>
   @yield('content')

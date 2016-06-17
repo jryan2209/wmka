@@ -11,6 +11,16 @@ var elixir = require('laravel-elixir');
  |
  */
 
+ var paths = {
+     'jquery': './vendor/bower_components/jquery/',
+     'materialize': './vendor/bower_components/Materialize/dist/js/'
+ }
+
 elixir(function(mix) {
-    mix.sass('app.scss');
-});
+     mix.sass('app.scss')
+      .scripts([
+        paths.jquery + "dist/jquery.js",
+        paths.materialize + "materialize.js",
+        "app.js"
+      ], './public/js/app.js')
+ });
