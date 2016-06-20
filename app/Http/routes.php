@@ -24,32 +24,32 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('sites', 'SiteController@index');
     Route::get('sites/{sites}', 'SiteController@show');
-    Route::post('sites','SiteController@store');
-    Route::patch('sites/{sites}', 'SiteController@update');
+    Route::post('site/store','SiteController@store');
+    Route::post('sites/{id}', 'SiteController@update');
     Route::delete('sites/{sites}', 'SiteController@destroy');
 
     Route::get('users', 'UserController@index');
     Route::get('users/{users}', 'UserController@show');
-    Route::post('user', 'UserController@store');
-    Route::patch('users/{users}', 'UserController@update');
+    Route::post('user/store', 'UserController@store');
+    Route::post('users/{users}', 'UserController@update');
     Route::delete('users/{users}', 'UserController@destroy');
 
     Route::get('groups', 'GroupController@index');
     Route::get('groups/{groups}', 'GroupController@show');
     Route::post('groups', 'GroupController@store');
-    Route::patch('groups/{groups}', 'GroupController@update');
+    Route::post('groups/{groups}', 'GroupController@update');
     Route::delete('groups/{groups}', 'GroupController@destroy');
 
     Route::get('permissions', 'PermissionController@index');
     Route::get('permissions/{permissions}', 'PermissionController@show');
     Route::post('permissions', 'PermissionController@store');
-    Route::patch('permissions/{permissions}', 'PermissionController@update');
+    Route::post('permissions/{permissions}', 'PermissionController@update');
     Route::delete('permissions/{permissions}', 'PermissionController@destroy');
 
     Route::get('permissions', 'PermissionController@index');
     Route::get('permissions/{permissions}', 'PermissionController@show');
     Route::post('permissions', 'PermissionController@store');
-    Route::patch('permissions/{permissions}', 'PermissionController@update');
+    Route::post('permissions/{permissions}', 'PermissionController@update');
     Route::delete('permissions/{permissions}', 'PermissionController@destroy');
 
     Route::get('articles', 'ArticleController@index');
@@ -61,6 +61,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('notifications', 'NotificationController@index');
     Route::get('notifications/{notifications}', 'NotificationController@show');
     Route::post('notifications', 'NotificationController@store');
-    Route::patch('notifications/{notifications}', 'NotificationController@update');
+    Route::post('notifications/{notifications}', 'NotificationController@update');
     Route::delete('notifications/{notifications}', 'NotificationController@destroy');
 });

@@ -1,4 +1,5 @@
 @import "vendor/bower_components/Materialize/sass/materialize.scss";
+
 $dark-background: #e5e6e6;
 
 body{
@@ -140,3 +141,9 @@ header, main, footer {
 .nav_text{
   padding-left:10px;
 }
+
+
+
+select {
+    background-color: rgb(84, 110, 122);
+  }

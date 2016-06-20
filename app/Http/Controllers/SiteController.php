@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\User;
+use App\Site;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,9 @@ class SiteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($sites)
     {
-        //
+
     }
 
     /**
@@ -41,7 +42,15 @@ class SiteController extends Controller
     {
 
       $site = new Site();
-      $site->name = $request->name;
+      $site->name = $request->organisation;
+      $site->type = $request->type;
+      $site->primary_contact = $request->content_name;
+      $site->phone = $request->contact_number;
+      $site->email = $request->email;
+      $site->address = $request->address;
+      $site->save();
+
+      return view('admin.dash');
 
     }
 
@@ -51,9 +60,10 @@ class SiteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($site)
     {
-        //
+        $site = site::find($site);
+        return view('admin.sites', compact('site'));
     }
 
     /**
@@ -64,7 +74,7 @@ class SiteController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -76,7 +86,17 @@ class SiteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $site = Site::find($id);
+        $site->name = $request->organisation;
+        $site->type = $request->type;
+        $site->primary_contact = $request->content_name;
+        $site->phone = $request->contact_number;
+        $site->email = $request->email;
+        $site->address = $request->address; // Address is not saving ?????
+
+        // $site->save();
+
+        return redirect()->back()->withInput();
     }
 
     /**

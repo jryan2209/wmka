@@ -10,7 +10,7 @@
             <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
               {{ csrf_field() }}
               <div class="input-field">
-                <input id="email" type="email" name="email" class="validate" value="{{ old('email') }}">
+                <input id="email" type="email" name="email" placeholder="Email" class="validate" value="{{ old('email') }}">
                 <label for="email">Email</label>
                 @if ($errors->has('email'))
                   <span class="help-block thin">
@@ -19,7 +19,7 @@
                 @endif
               </div>
               <div class="input-field">
-                <input id="password" type="password" name="password" class="validate" value="{{ old('email') }}">
+                <input id="password" type="password" name="password" placeholder="Password" class="validate" value="{{ old('email') }}">
                 <label for="password">Password</label>
                 @if ($errors->has('password'))
                     <span class="help-block thin">

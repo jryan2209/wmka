@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\User;
+use App\Role;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -24,6 +27,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $user = User::find(Auth::id());
+
+      if ($user->hasRole('odin')) {
+        return redirect('admin/dash');
+      }
+      if ($user->hasRole('organiser')) {
+
+      }
+      if($user->hasRole('parent')){
+
+      }
+      if($user->hasRole('child')){
+
+      }
     }
 }
