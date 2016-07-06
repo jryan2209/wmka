@@ -1,30 +1,26 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Auth;
-use League\Fractal\Resource\Collection;
-use League\Fractal\Resource\Item;
-use League\Fractal\Manager;
-use Validator;
-use App\API\transformers\PermissionTransformer;
-use Illuminate\Http\Request;
+use App\User;
+use App\Role;
 use App\Permission;
+use App\Http\Requests;
+use Illuminate\Http\Request;
 
-class PermissionController extends ApiController {
 
+class PermissionController extends Controller {
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index(Request $request)
+	public function index()
 	{
-		$permissions = Permission::all();
-		if($permissions) {
-			return $this->respondWithCollection($permissions, new PermissionTransformer);
-		}
-		return $this->errorNotFound('No permissions found');
+		return view('admin.permission');
 	}
 
 	/**
@@ -33,9 +29,9 @@ class PermissionController extends ApiController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show(Permission $permission)
+	public function show()
 	{
-		return $this->repondWithItem($permission, new PermissionTransformer);
+
 	}
 
 }

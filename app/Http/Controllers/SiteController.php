@@ -50,7 +50,7 @@ class SiteController extends Controller
       $site->address = $request->address;
       $site->save();
 
-      return view('admin.dash');
+      return redirect('admin/dash');
 
     }
 

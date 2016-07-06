@@ -1,11 +1,5 @@
-$('.button-collapse').sideNav({});
-$(".dropdown-button").dropdown({});
-// Initialize collapse button
-  $(".button-collapse").sideNav();
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  // $('.collapsible').collapsible();
-    //
-    // // Show sideNav
-    // $('.button-collapse').sideNav('show');
-    // // Hide sideNav
-    // $('.button-collapse').sideNav('hide');
+$('.button-collapse').sideNav({
+  edge: 'left',
+  closeOnClick: true
+});
+$('.mdb-select').material_select();

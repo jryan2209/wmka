@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
   <div class="row">
     <div class="col m12">
@@ -10,7 +9,7 @@
   </div>
   <div class="row valign-wrapper">
             <div class="col s2">
-              <img src="images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              <img src="images/yuna.jpg" alt="" class="circle responsive-img">
             </div>
             <div class="col s10">
               <span class="black-text">

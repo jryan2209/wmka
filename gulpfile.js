@@ -1,5 +1,7 @@
 var elixir = require('laravel-elixir');
 
+require('laravel-elixir-vueify');
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -13,14 +15,21 @@ var elixir = require('laravel-elixir');
 
  var paths = {
      'jquery': './vendor/bower_components/jquery/',
-     'materialize': './vendor/bower_components/Materialize/dist/js/'
+     'tether':'./vendor/bower_components/tether/',
+     'bootstrap':'./vendor/bower_components/bootstrap/'
  }
 
 elixir(function(mix) {
      mix.sass('app.scss')
       .scripts([
         paths.jquery + "dist/jquery.js",
-        paths.materialize + "materialize.js",
-        "app.js"
-      ], './public/js/app.js')
+        paths.tether + "dist/js/tether.js",
+        paths.bootstrap + "dist/js/bootstrap.js",
+        "structure.js"
+      ], './public/js/lib.js')
+      mix.browserify('main.js');
+      mix.scripts(
+        ['app.js'],
+        './public/js/app.js'
+        );
  });

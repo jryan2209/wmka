@@ -7,20 +7,14 @@
     <title>Where My Kids App</title>
     @include('partial.stylesheets')
 </head>
-<body id="admin-layout">
-  @include('partial.headernav')
-<main>
+<body id="admin-layout" class="app">
+  @include('partial.nav')
+<main class="mdl-layout__content">
   @yield('content')
 </main>
 
 
 
-
-<script>
-$(document).ready(function() {
-    $('select').material_select();
-
-  });
-</script>
+@include('partial.scripts')
 </body>
 </html>

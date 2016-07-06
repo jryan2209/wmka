@@ -20,8 +20,9 @@ class DashController extends Controller
 
   public function index()
   {
-    $user = User::find(Auth::id());
 
+    $user = User::find(Auth::id());
+    
     if ($user->hasRole('odin')) {
 
       $allusers = User::paginate(12);

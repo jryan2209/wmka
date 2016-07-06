@@ -13,10 +13,13 @@
 Route::get('welcome', function () {
     return view('welcome');
 });
+Route::get('test', 'HomeController@test');
+
 Route::group(['middleware' => ['web']], function () {
     Route::auth();
 
     Route::get('/admin/dash', 'DashController@index');
+    Route::get('/admin/permissions', 'PermissionController@index');
 
 
     Route::get('/', 'HomeController@index');
